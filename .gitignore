@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.gradle/
+build/
+local.properties
+*.jks
+*.keystore
+
+state/
+work/
+config.private.json

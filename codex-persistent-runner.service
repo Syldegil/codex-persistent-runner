@@ -1,0 +1,38 @@
+[Unit]
+Description=Experimental persistent task queue
+StartLimitIntervalSec=600
+StartLimitBurst=3
+[Service]
+Type=simple
+WorkingDirectory=%h/runner-work
+Environment=PERSISTENT_RUNNER_CONFIG=%h/.config/codex-persistent-runner.json
+ExecStart=/usr/bin/python3 -B %h/codex-persistent-runner/runner.py worker
+Restart=on-failure
+RestartSec=30
+TimeoutStopSec=45
+KillMode=control-group
+UMask=0077
+NoNewPrivileges=yes
+PrivateUsers=yes
+PrivateTmp=yes
+PrivateDevices=yes
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=%h/.local/state/codex-persistent-runner %h/runner-work
+InaccessiblePaths=-%h/.ssh -%h/.aws -%t/bus -/run/dbus -/run/docker.sock -/run/containerd -/run/libvirt
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+LockPersonality=yes
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_NETLINK
+MemoryHigh=5G
+MemoryMax=6G
+MemorySwapMax=0
+CPUQuota=200%
+CPUWeight=20
+IOWeight=20
+Nice=10
+TasksMax=256
+LimitNOFILE=4096
+[Install]
+WantedBy=default.target

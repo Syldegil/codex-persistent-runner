@@ -1,0 +1,12 @@
+{
+  "state_dir": "/home/user/.local/state/codex-persistent-runner",
+  "work_dir": "/home/user/runner-work",
+  "codex_bin": "/home/user/.local/bin/codex",
+  "service_name": "codex-persistent-runner.service",
+  "model": "CHOOSE_AN_AVAILABLE_MODEL",
+  "mounts": [],
+  "min_ram_gib": 4,
+  "disk_reserve_gib": 20,
+  "min_free_inodes": 10000,
+  "max_load": 4
+}

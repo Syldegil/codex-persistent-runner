@@ -1,0 +1,10 @@
+{
+  "operations_succeeded": [],
+  "operations_failed": [],
+  "artifacts": [],
+  "modified_files": [],
+  "tests": [],
+  "verified_results": [],
+  "next_action": "Inspect synthetic outputs before resuming",
+  "risks": []
+}

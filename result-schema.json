@@ -1,0 +1,1 @@
+{"type":"object","properties":{"status":{"type":"string","enum":["completed","checkpointed","blocked","failed"]},"summary":{"type":"string"},"evidence":{"type":"array","items":{"type":"string"}},"next_action":{"type":"string"}},"required":["status","summary","evidence","next_action"],"additionalProperties":false}
